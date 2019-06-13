@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attempt 1</title>
+
+	<style type="text/css">
+
+		body {
+			background-color: grey;
+		}
+
+		h3{
+		border: 3px groove #232323;
+			width: 55px;
+			padding-bottom: 10px;
+			padding-top:10px; 
+			text-align: center;
+		}
+
+		.attack {
+			border: 5px solid #232323;
+			width: 100px;
+			height:200px;
+		}
+
+		#playerDiv {
+			height: 179px;
+		}
+
+		#bossDiv {
+			margin-left: 0;
+			position: relative;
+			left: 504px;
+			top: -295px;			
+		}
+
+		.bossClass {
+			margin-left: 0;
+			position: relative;
+			left: 504px;
+			top: -295px;
+		}
+
+		
+		#h3player{
+			margin-bottom: 12px;
+			margin-left: 20px;
+			padding: auto 5px;
+		}
+
+		#h3boss {
+			position: relative;
+			top: -282px;
+			left: 504px;
+			margin-left: 23px;
+		}
+
+		#gameContainer {
+			margin-right: 0;
+			width: 100%;
+		}
+
+		#buttonsDiv {
+			position: relative;
+			left: 505px;
+			top: -295px;
+		}
+
+
+		button {
+		background-color: #232323;
+		color: #42f492;
+		border-radius: 5px;
+		font-size: 16px;
+		outline: none;
+		border: 1px solid #42f670;
+		float:left;
+		}
+
+		button:hover {
+			color: grey;
+		}
+
+		span {
+			margin-left: 3px;
+			margin-top: 5px;
+		}
+
+		.gameClass {
+			position:relative;
+			left: 400px;
+			color:white;
+			background-color: green;
+		}
+		.gameClassRed {
+			background-color: red;
+			color:white;
+		}
+
+		.gameClass2 {
+			
+			top: 600px;
+			margin-left: 500px;
+			color:white;
+			background-color: green;
+		}
+
+		.gameClassUlt {
+			background-color: #F0D30B;
+			position:relative;
+			left: 400px;
+			color:white;
+		}
+
+		#ultButton {
+			position: relative;
+			bottom: -30px;
+			left: -110px;
+			width: 110px;
+			height: 30px;
+			font-size: 20px;
+		}
+
+		input {
+			width: 35px;
+			background-color: inherit;
+		}
+
+		
+
+	 	#resetGameButton {
+	 		position: relative;
+	 		bottom: 200px;
+	 		left: 150px;
+		}
+		
+		
+		
+	</style>
+</head>
+<body>
+
+	<div id="fightGame">
+	<div id="gameContainer">
+		<h3 id="h3player">Player</h3>
+	<div class="attack" id="playerDiv">
+		<span id="hpSpan">HP:<input type="text" id="hp2input"></input></span><br>
+		<span id="energySpan">Energy:<input type="text" id="energy2input"></input></span>
+	</div>
+	<button id="attackButton">Attack!</button>
+	<button id="healButton">Heal</button>
+	<button id="ultButton">Ultimate!</button>
+
+
+	
+	
+		<h3 id="h3boss">Boss</h3>
+	<div class="attack" id="bossDiv">
+		<span id="bosshpSpan">HP:<input type="text" name="bosshpInput" id="bosshpInput"></span><br>
+		<span id="bossenergySpan">Energy:<input type="text" name="bossenergyInput" id="bossenergyInput"></span>
+	
+	</div>
+	<div id="buttonsDiv">
+	<button id="bossAttackButton">Attack!</button>
+	<button id="bossHealButton">Heal</button>
+	</div>
+</div>
+
+<button id="resetGameButton">Reset Game!</button>
+</div>
+<script type="text/javascript" src="GameAttempt.js">
+</script>
+
+</body>
+</html>

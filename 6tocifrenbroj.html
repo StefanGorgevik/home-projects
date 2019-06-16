@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>6tocifren broj</title>
+	<script type="text/javascript">
+		
+//Da se presmeta 6tocifren broj
+
+	var num = prompt("Enter a 6-integers-number!");
+	var digits = (""+num).split("").map(Number) ;
+	console.log(digits);
+
+	//SITE VKUPNO
+
+	var sum = 0;
+	for(var l = 0; l <digits.length; l++){
+			sum += digits[l];		
+	}
+
+	console.log("Zbirot e na site cifri e: " + sum);
+
+	//PRVITE 3
+
+	var zbir = 0;
+		
+	for(var i = 0; i < digits.length -3; i++){
+			zbir += digits[i];		
+	}	
+
+	console.log("Zbirot na prvite 3 cifri e: " + zbir);
+
+	// //VTORITE 3
+
+	//Doing it with shift
+
+	// digits.shift();
+	// digits.shift();
+	// digits.shift();
+
+	var digits2 = digits.slice(3,6)
+    console.log(digits2);
+	
+
+	var zbir2 = 0;
+	for(var j = 0; j < digits2.length; j++){	
+		zbir2 += digits2[j];
+	}
+	zbir2 = parseInt(zbir2);
+	console.log("Zbirot na vtorite 3 cifri e: " + zbir2);
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -52,3 +52,33 @@
 // }
 // var average = zbir / numbers2.length;
 // console.log(average);
+
+
+
+// Print ONLY THE FIRST even number 
+
+var numbers = [5, 7, 33, 88, 92];
+
+var even = numbers.find(num => num % 2 === 0);
+console.log(even);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

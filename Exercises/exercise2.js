@@ -62,12 +62,31 @@
 // var even = numbers.find(num => num % 2 === 0);
 // console.log(even);
 
+//Fibonacci scale
+
+
+function fibonacci(a,b) {
+  if(a> 200) {
+    return a + b;
+  }
+  console.log(a+b);
+  return fibonacci(b, a + b);
+}
+
+fibonacci(1,1);
 
 
 
+var fib = (a,b) => {
+  if(a > 200) {
+    return a + b;
+  }else {
+    console.log(a+b);
+    return fib(b, a+b);
+  }
+}
 
-
-
+fib(1,1);
 
 
 

@@ -1,0 +1,9 @@
+body {
+    background-color: grey;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#refreshBtn {
+  margin-left: 150px;
+}

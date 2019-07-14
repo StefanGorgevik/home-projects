@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="todo.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <h1>TO-DO Table!</h1>
+    <hr>
+    <label>Enter option: 
+        <input type="text" name="option" id="option">
+    </label>
+    <br><br>
+    <hr>
+    <label>Enter a todo:
+        <input type="text" name="todo" id="todo">
+    </label>
+    <button id="subBtn2">Submit</button>
+    
+    <button id="refreshBtn">Refresh</button>
+    <hr>
+
+
+    <table border="1">
+        <thead>
+            <th>To - Do</th>
+        </thead>
+        <tbody id="tbody">
+          
+        </tbody>
+    </table>
+ 
+    <script>
+        var array = [];
+        var optInput = document.querySelector("#option");
+        var todoInput = document.querySelector("#todo");
+        var tbody = document.querySelector("#tbody");
+
+        var subBtn = document.querySelector("#subBtn");
+
+
+        var subBtn2 = document.querySelector("#subBtn2");
+        subBtn2.addEventListener("click", function() {
+            var check = todoInput.value !== "" && todoInput.value !== undefined;
+            if(check) {
+                var tr = document.createElement("tr");
+                var td = document.createElement("td");
+                td.innerHTML =  todoInput.value;
+                tr.append(td);
+                tbody.append(tr);
+                todoInput.value = '';
+            }
+        })
+       
+       var refreshBtn = document.querySelector("#refreshBtn");
+       refreshBtn.addEventListener("click", function(){
+           window.location.reload();
+       })
+      
+
+    </script>
+    {{!-- <script>
+        var array = [];
+        var optInput = document.querySelector("#option");
+        var todoInput = document.querySelector("#todo");
+        var tbody = document.querySelector("#tbody");
+
+        var subBtn = document.querySelector("#subBtn");
+
+
+        var subBtn2 = document.querySelector("#subBtn2");
+        subBtn2.addEventListener("click", function() {
+            var check = todoInput.value !== "" && todoInput.value !== undefined;
+            if(check) {
+                array.push(todoInput.value);
+                todoInput.value = '';
+            }
+           
+            console.log(array);
+            for(var i = 0; i < array.length; i++) {
+                var tr = document.createElement("tr");
+                var td = document.createElement("td");
+                td.innerHTML = array[i];
+                tr.append(td);
+                tbody.append(tr);
+                todoInput.value = '';
+                array =[];
+                break;
+            }
+            todoInput.value = '';
+        })
+       
+      
+
+    </script> --}}
+</body>
+</html>

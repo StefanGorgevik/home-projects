@@ -33,10 +33,6 @@
 // 		console.log("We don't support that language!");
 // }
 
-	
-
-
-
 // 3.Napisete program koj sto vi vrakja rezultat dali moze da si kupite nov laptop.
 // Iminjata na laptopite so nivnite ceni se: Macbook, Macbook Pro i Macbook Air. 
 //Cenata na Macbook = $500, na Macbook Pro = $900 i na Macbook Air = $600; Treba da cuvate budzet 
@@ -55,8 +51,6 @@
 // }else if(budget >= 500 && budget < 900) {
 // 	console.log(`You can afford the Macbook laptop for ${macbook} dollars and the MacbookAir for ${macbookAir} dollars!`);
 // }
-
-
 
 // 4.Напишете циклус за пресметување на сите парни броеви во еден опсег кој што ќе го внесете од prompt.
 //**** */i e num1 preku prompt, 100 e num2****
@@ -107,9 +101,8 @@
 //     }
 // }
 // console.log(fiveLetterNames);
-// 8.Направете низа чија големина ќе ја внесете преку prompt. Сите елементи од таа низа внесете ги преку prompt и прикажете ја подредена.
-
-
+// 8.Направете низа чија големина ќе ја внесете преку prompt. Сите елементи од таа низа внесете ги преку
+// prompt и прикажете ја подредена.
 
 // 9.Направете низа библиотека кој ќе содржи елементи кои се објекти. Тие објекти треба да бидат книги кои ќе имаат автор, наслов, и дали е прочитана или не (true/false)
 // -Прикажете кои книги се прочитани а потоа кои не се прочитани.
@@ -202,11 +195,40 @@
 // 	console.log(`${i} * 9 = ${result}`);
 // }
 
-//14. Isprintaj gi site 4-cifreni broevi, cij zbir na cifrite e neparen broj
+//14. Isprintaj gi site 4-cifreni broevi 0d 1000 do 1100, cij zbir na cifrite e neparen broj
+
+
+// for(var i = 1000; i < 1100; i++) {
+// var sum = 0;
+// 	i = i.toString();
+// 	for(let j = 0; j < i.length; j++){
+// 		sum = sum + Number(i[j]);
+// 	}
+// 	if(sum % 2 !== 0) {
+// 		console.log(`${i} = ${sum}`);
+// 	}
+//}
+
 
 //15.//Isprintaj gi site 2-cifreni broevi chij zbir na cifrite e paren
 //Izbroj kolku se
 //Ispecati kolku takvi ima
+
+// var sum;
+// var count = 0;
+// for(var i = 10; i < 100; i++) {
+// 	sum = 0;
+// 	i = i.toString();
+// 	for(var j = 0; j < i.length; j++){
+// 		sum += Number(i[j]);
+// 	}
+// 	if(sum % 2 === 0) {
+// 		count++;
+// 		console.log(`Sum is: ${sum}`);
+// 	}
+// }
+// console.log(`Count is: ${count}`);
+
 
 //15. Make a function to print the fibbonaci scale(up to 1000)
 
@@ -374,9 +396,39 @@
 
 //30. Make a isEven and kebabToSnake function!
 
+// function isEven(num) {
+// 	num % 2 === 0 ? console.log(`${num} is even!`) : console.log(`${num} is odd!`);
+// }
+// isEven(5);
+
+// function kebabToSnake(str) {
+// 	str = str.replace(/-/g, "_");
+// 	return str;
+// }
+// console.log(kebabToSnake("hello-world"));
+// console.log(kebabToSnake("zdravo-kako-si"));
+
 //31. Using fetch, make a table that will generate the following data: http://dummy.restapiexample.com/api/v1/employees
 
 //32. Make these functions areaTriangle, areaRectangle, areaCircle
+// var areaTriangle = (base, height) => {
+// 	var result = (base * height) / 2;
+// 	return result;
+// }
+// console.log(areaTriangle(10,10));
+
+// var areaRectangle = (base, height) => {
+// 	var result = base * height;
+// 	return result;
+// }
+// console.log(areaRectangle(10,10));
+
+// var areaCircle = (pi, rad) => {
+// 	let result = pi * (rad * rad);
+// 	return result;
+// }
+
+// console.log(areaCircle(3.14, 20));
 
 //33. Make the "guess the secret number" game
 
@@ -384,6 +436,7 @@
 // They can date only if they are in the range of 5 years.
 
 //35. Make a calculator on your page!
+//http://127.0.0.1:8080/calculator
 
 //36./Од дадената низа, треба да се отпечати име и презиме на студентот со највисок просек,
 //студентот со најнизок просек, и средна вредност (просек) на целата генерација (сите студенти)
@@ -406,24 +459,52 @@
 
 //39. Finish the last homework from semos (node js!)
 
-//40. Write a JavaScript program which compute, the average marks of the following students Then, this average is used to determine 
-//the corresponding grade.
-
-/*Student Name	Marks
-David	80
-Vinoth	77
-Divya	88
-Ishitha	95
-Thomas	68
-The grades are computed as follows :
-
+//40. Ddetermine the corresponding grade of each student!
+/*
 Range	  Grade
-<60			F
-<70			D
-<80			C
-<90			B
-<100		A
+50  - 60    F
+60	- 70	D
+70	- 80	C
+80	- 90	B
+90 - 100	A
 */
+
+// var stud = [
+// 	{
+// 		name: "David",
+// 		mark: 80
+// 	},
+// 	{
+// 		name: "Vinoth",
+// 		mark: 77
+// 	},
+// 	{
+// 		name: "Divya",
+// 		mark: 88
+// 	},
+// 	{
+// 		name: "Ishitha",
+// 		mark: 95
+// 	},
+// 	{
+// 		name: "Thomas",
+// 		mark: 68
+// 	}
+// ];
+
+// for(var i = 0; i < stud.length; i++) {
+// 	if(stud[i].mark >= 90) {
+// 		console.log(`${stud[i].name} has an A!`);
+// 	}else if(stud[i].mark < 90 && stud[i].mark >= 80) {
+// 		console.log(`${stud[i].name} has a B!`);
+// 	}else if(stud[i].mark < 80 && stud[i].mark >= 70) {
+// 		console.log(`${stud[i].name} has a C!`);
+// 	}else if(stud[i].mark < 70 && stud[i].mark >= 60) {
+// 		console.log(`${stud[i].name} has a D!`);
+// 	}else if(stud[i].mark < 60) {
+// 		console.log(`${stud[i].name} has an F!`);
+// 	}
+// };
 
 //41. Write a JavaScript program to construct the following pattern, using a nested for loop. 
 
@@ -431,4 +512,28 @@ Range	  Grade
 // * *  
 // * * *  
 // * * * *  
-// * * * * * */
+// * * * * * 
+// * * * * * *
+
+// var star = "*";
+// for(var i = 0; i < 7; i++) {
+// 	console.log(star);
+// 	star += "*";
+// }
+
+
+
+//42.How can you count the number of occurrences of elements in an array?
+
+// var arr= [1,5,1,1,5,2,4,5,2,3,2,4,2,4,2,3,2,3,2,4,2,3,2,4,2,5,1,4,2,4,2,3,2,4,1];
+// var ones = 0;
+// var twos = 0;
+// for(var i = 0; i < arr.length; i++){
+//    if(arr[i] === 1){
+//        ones++;
+//    }else if(arr[i] ===2){
+//        twos++;
+//    }
+//    }
+// console.log(" There are " + ones + " digits 1 in this array");
+// console.log(" There are " + twos + " digits 2 in this array");

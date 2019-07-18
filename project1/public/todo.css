@@ -5,5 +5,9 @@ body {
 }
 
 #refreshBtn {
-  margin-left: 150px;
+  margin-left: 80px;
+}
+
+#getBtn {
+  margin-left: 80px;
 }

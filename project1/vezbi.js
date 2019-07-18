@@ -200,3 +200,5 @@ Range	  Grade
 // * * *  
 // * * * *  
 // * * * * * */
+
+//42.How can you count the number of occurrences of elements in an array?

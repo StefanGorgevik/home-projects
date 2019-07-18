@@ -18,13 +18,15 @@
     <label>Enter a todo:
         <input type="text" name="todo" id="todo">
     </label>
-    <button id="subBtn2">Submit</button>
+    <button id="subBtn">Submit</button>
+
+    <button id="getBtn">Get To - Do's</button>
     
     <button id="refreshBtn">Refresh</button>
     <hr>
 
 
-    <table border="1">
+    <table border="2">
         <thead>
             <th>To - Do</th>
         </thead>
@@ -34,6 +36,7 @@
     </table>
  
     <script>
+
         var array = [];
         var optInput = document.querySelector("#option");
         var todoInput = document.querySelector("#todo");
@@ -42,23 +45,41 @@
         var subBtn = document.querySelector("#subBtn");
 
 
-        var subBtn2 = document.querySelector("#subBtn2");
-        subBtn2.addEventListener("click", function() {
+        var subBtn = document.querySelector("#subBtn");
+        subBtn.addEventListener("click", function() {
             var check = todoInput.value !== "" && todoInput.value !== undefined;
             if(check) {
                 var tr = document.createElement("tr");
                 var td = document.createElement("td");
                 td.innerHTML =  todoInput.value;
+                array.push(todoInput.value);
                 tr.append(td);
                 tbody.append(tr);
                 todoInput.value = '';
+              fetch('http://127.0.0.1:8080/todo', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                }, 
+                body: JSON.stringify(array)
+            }).then(() => {
+                 console.log('Item added');
+                }).catch(err => {
+                 console.error(err)
+            });
             }
         })
+
+        {{!-- var getBtn = document.querySelector("#getBtn");
+        getBtn.addEventListener("click", function() => {
+
+        }); --}}
        
        var refreshBtn = document.querySelector("#refreshBtn");
        refreshBtn.addEventListener("click", function(){
            window.location.reload();
-       })
+       });
       
 
     </script>

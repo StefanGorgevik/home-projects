@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="todo.css"/>
+    {{!-- <link rel="stylesheet" href="todo.css"/> --}}
     <title>Document</title>
 </head>
 <body>
@@ -31,11 +31,15 @@
             <th>To - Do</th>
         </thead>
         <tbody id="tbody">
-          
+          {{#each todos}}
+        <tr>
+            <td>{{id}}</td>
+        </tr>
+        {{/each}}
         </tbody>
     </table>
- 
-    <script>
+
+      <script>
 
         var array = [];
         var optInput = document.querySelector("#option");
@@ -71,11 +75,6 @@
             }
         })
 
-        {{!-- var getBtn = document.querySelector("#getBtn");
-        getBtn.addEventListener("click", function() => {
-
-        }); --}}
-       
        var refreshBtn = document.querySelector("#refreshBtn");
        refreshBtn.addEventListener("click", function(){
            window.location.reload();
@@ -83,7 +82,16 @@
       
 
     </script>
-    {{!-- <script>
+
+  
+       
+      
+
+    </script>
+
+    
+    {{!--
+    <script>
         var array = [];
         var optInput = document.querySelector("#option");
         var todoInput = document.querySelector("#todo");
@@ -92,14 +100,13 @@
         var subBtn = document.querySelector("#subBtn");
 
 
-        var subBtn2 = document.querySelector("#subBtn2");
-        subBtn2.addEventListener("click", function() {
+        var subBtn = document.querySelector("#subBtn");
+        subBtn.addEventListener("click", function() {
             var check = todoInput.value !== "" && todoInput.value !== undefined;
             if(check) {
                 array.push(todoInput.value);
                 todoInput.value = '';
             }
-           
             console.log(array);
             for(var i = 0; i < array.length; i++) {
                 var tr = document.createElement("tr");
@@ -108,14 +115,11 @@
                 tr.append(td);
                 tbody.append(tr);
                 todoInput.value = '';
-                array =[];
+                array =[]; 
                 break;
             }
             todoInput.value = '';
         })
-       
-      
-
-    </script> --}}
+      --}}
 </body>
 </html>

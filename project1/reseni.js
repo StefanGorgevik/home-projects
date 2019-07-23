@@ -537,3 +537,21 @@ Range	  Grade
 //    }
 // console.log(" There are " + ones + " digits 1 in this array");
 // console.log(" There are " + twos + " digits 2 in this array");
+
+//43. Have the function FirstReverse(str) take the str parameter being passed and return the string in 
+//reversed order. For example: if the input string is "Hello World and Coders" then your program should 
+//return the string sredoC dna dlroW olleH. 
+
+
+// function FirstReverse(str) { 
+// 	var splitString = str.split("").reverse().join(""); 
+//     return splitString;
+// }
+
+// console.log(FirstReverse("Hello World and Coders"));
+
+//44. Have the function LetterChanges(str) take the str parameter being passed and modify it using the 
+//following algorithm. Replace every letter in the string with the letter following it in the alphabet
+// (ie. c becomes d, z becomes a). 
+//Then capitalize every vowel in this new string (a, e, i, o, u) and finally return this modified string. 
+

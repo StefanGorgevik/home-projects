@@ -1,26 +1,19 @@
 var express = require("express");
 var app = express();
-var hbs = require("express-hbs");
 var bodyParser = require("body-parser");
-app.use(express.static("public"));
-var todos = require("./handlers/todos");
+var hbs = require('express-hbs');
+var todos = require("./handlers/todosH");
 
-app.engine("hbs", hbs.express4());
-app.set("view engine", "hbs");
-app.set("views", __dirname + "/views");
+app.engine('hbs', hbs.express4());
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
 
-app.get("/todo", todos.GetAllTodos);
-// app.get("/todo", todos.GetAllTodos() => {
-//     res.render("todo");
-// });
-
+app.get("/todo", todos.GetTodos);
 
 var PORT = process.env.PORT || 8080;
 app.listen(PORT, (err) => {
     if(err) {
-        return console.log(`The server cannot be started!`);
+        return console.log("Server could not be started!");
     }
-    else {
-        return console.log(`The server is started and listening on port ${PORT}!`)
-    }
+    return console.log(`Server started successfully and is listening on port ${PORT}!`);
 })

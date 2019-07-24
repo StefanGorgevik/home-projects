@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{!-- <link rel="stylesheet" href="todo.css"/> --}}
+     <link rel="stylesheet" href="todo.css"/>
     <title>Document</title>
 </head>
 <body>
@@ -26,100 +26,73 @@
     <hr>
 
 
-    <table border="2">
-        <thead>
-            <th>To - Do</th>
-        </thead>
-        <tbody id="tbody">
-          {{#each todos}}
-        <tr>
-            <td>{{id}}</td>
-        </tr>
-        {{/each}}
-        </tbody>
-    </table>
+    <table id="table" border="1" >
+		<tr>
+			<th>To - Do</th>
+		</tr>
+    </table> 
 
-      <script>
-
-        var array = [];
-        var optInput = document.querySelector("#option");
-        var todoInput = document.querySelector("#todo");
-        var tbody = document.querySelector("#tbody");
-
-        var subBtn = document.querySelector("#subBtn");
-
-
-        var subBtn = document.querySelector("#subBtn");
-        subBtn.addEventListener("click", function() {
-            var check = todoInput.value !== "" && todoInput.value !== undefined;
-            if(check) {
-                var tr = document.createElement("tr");
-                var td = document.createElement("td");
-                td.innerHTML =  todoInput.value;
-                array.push(todoInput.value);
-                tr.append(td);
-                tbody.append(tr);
-                todoInput.value = '';
-              fetch('http://127.0.0.1:8080/todo', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                }, 
-                body: JSON.stringify(array)
-            }).then(() => {
-                 console.log('Item added');
-                }).catch(err => {
-                 console.error(err)
-            });
-            }
-        })
-
-       var refreshBtn = document.querySelector("#refreshBtn");
-       refreshBtn.addEventListener("click", function(){
-           window.location.reload();
-       });
-      
-
-    </script>
-
-  
-       
-      
-
-    </script>
-
-    
-    {{!--
     <script>
-        var array = [];
+
         var optInput = document.querySelector("#option");
         var todoInput = document.querySelector("#todo");
         var tbody = document.querySelector("#tbody");
-
         var subBtn = document.querySelector("#subBtn");
+        var getBtn = document.querySelector("#getBtn");
 
+     var getTodos = () =>{
+            fetch("http://127.0.0.1:8080/todo")
+                .then(res => res.json()) 
+                .then(data=>{
+                        for(var i = 0; i < data.length; i++) {
+                        //    var tr = document.createElement("tr");
+                        //    var td = document.createElement('td');
+                         console.log(data[i]);
+                        //    td.innerText = data[i].id;
+                        //    tr.append(td);
+                        //    table.append(tr);
+                        }
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+           }
+           getBtn.addEventListener('click', getTodos);
 
-        var subBtn = document.querySelector("#subBtn");
-        subBtn.addEventListener("click", function() {
-            var check = todoInput.value !== "" && todoInput.value !== undefined;
-            if(check) {
-                array.push(todoInput.value);
-                todoInput.value = '';
-            }
-            console.log(array);
-            for(var i = 0; i < array.length; i++) {
-                var tr = document.createElement("tr");
-                var td = document.createElement("td");
-                td.innerHTML = array[i];
-                tr.append(td);
-                tbody.append(tr);
-                todoInput.value = '';
-                array =[]; 
-                break;
-            }
-            todoInput.value = '';
-        })
-      --}}
+        // subBtn.addEventListener("click", function() {
+        //     var check = todoInput.value !== "" && todoInput.value !== undefined;
+        //     if(check) {
+        //         var tr = document.createElement("tr");
+        //         var td = document.createElement("td");
+        //         td.innerHTML =  todoInput.value;
+        //         var newTodo = {id: todoInput.value};
+        //         tr.append(td);
+        //         tbody.append(tr);
+        //         todoInput.value = ''
+        //         fetch('http://127.0.0.1:8080/todo',{ credentials: 'include' }, {
+        //         method: 'post',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         }, 
+        //         body: JSON.stringify(newTodo)
+        //         })
+        //         .then(res => {
+        //         if(res.ok) {
+        //         return res;
+        //         } else {
+        //         throw Error(`Request rejected with status ${res.status}`);
+        //         }
+        //         })
+        //         .catch(console.error)
+        //     }
+        // })
+
+    //    var refreshBtn = document.querySelector("#refreshBtn");
+    //    refreshBtn.addEventListener("click", function(){
+    //        window.location.reload();
+    //    });
+      
+    </script>
+   
 </body>
 </html>

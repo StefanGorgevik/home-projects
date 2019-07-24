@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="todo.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <h1>TO-DO Table!</h1>
+    <hr>
+    <label>Enter a todo:
+        <input type="text" name="todo" id="todo">
+    </label>
+    <button id="subBtn">Submit</button>
+
+    <button id="getBtn">Get To - Do's</button>
+    
+    <button id="refreshBtn">Refresh</button>
+    <hr>
+
+
+    <table id="table">
+		<tr>
+			<th>To - Do</th>
+		</tr>
+    </table> 
+
+    <script>
+
+        var optInput = document.querySelector("#option");
+        var todoInput = document.querySelector("#todo");
+        var tbody = document.querySelector("#tbody");
+        var subBtn = document.querySelector("#subBtn");
+        var getBtn = document.querySelector("#getBtn");
+
+     var getTodos = () =>{
+            fetch("http://127.0.0.1:8080/todo")
+                .then(res => res.json()) 
+                .then(data=>{
+                        for(var i = 0; i < data.length; i++) {
+                          var tr = document.createElement("tr");
+                            var td = document.createElement('td');
+                         console.log(data[i]);
+                            td.innerText = data[i].id;
+                            tr.append(td);
+                            table.append(tr);
+                        }
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+           }
+           getBtn.addEventListener('click', getTodos);
+
+        
+       var refreshBtn = document.querySelector("#refreshBtn");
+       refreshBtn.addEventListener("click", function(){
+           window.location.reload();
+       });
+
+        subBtn.addEventListener("click", function() {
+            var validate = todoInput.value.trim() != "" && todoInput.value != undefined ;
+            if(validate) {
+                var data = {
+                    id: todoInput.value 
+                };
+                fetch(
+                    'http://127.0.0.1:8080/todo',
+                    {
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                .then(res => res.json())
+                .then(data => {
+                    var tr = document.createElement('tr');
+                    var td = document.createElement('td');
+                    td.innerText = output.id;
+                    tr.append(td);
+                    table.appendChild(tr);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+                todoInput.value = '';
+            } else {
+                alert('Not all fields are filled in.');
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+        // var check = todoInput.value !== "" && todoInput.value !== undefined;
+        // if(check) {
+        //         var tr = document.createElement("tr");
+        //         var td = document.createElement("td");
+        //         td.innerHTML =  todoInput.value;
+        //         var newTodo = {id: todoInput.value};
+        //         tr.append(td);
+        //         table.append(tr);
+        //         todoInput.value = ''
+            
+        //         fetch('http://127.0.0.1:8080/todo', {
+        //                 method: 'post',
+        //                 headers: {
+        //                     'Content-Type': 'application/json'
+        //                 },
+        //                 body: JSON.stringify(data)
+        //             })
+        //         .then(res => res.json()
+        //         .catch(err => {
+        //             console.log(err);
+        //         });
+        //     }else {
+        //         alert('Not all fields are filled in.');
+        //     }
+        // });
+
+
+
+    </script>
+   
+</body>
+</html>

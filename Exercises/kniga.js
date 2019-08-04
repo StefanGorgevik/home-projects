@@ -205,7 +205,6 @@ var handleClientRequests = (request) => {
 // }
 
 //^ revealing module pattern
-
 // var printableMessage = () => {
 //     var message = "hello";
 //     function setMessage(newMessage) {
@@ -225,11 +224,15 @@ var handleClientRequests = (request) => {
 //     };
 // }
 
-// console.log(printableMessage);
-
+//console.log(printableMessage());
+//You are actually creating a new object(awesome1)
 // var awesome1 = printableMessage();
 // console.log(awesome1)
 // awesome1.printMessage();
+// awesome1.setMessage("hi");
+// awesome1.printMessage();
+// var msg = awesome1.getMessage();
+// console.log(msg);
 
 // var awesome2 = printableMessage();
 // awesome2.printMessage();
@@ -237,3 +240,25 @@ var handleClientRequests = (request) => {
 // awesome2.printMessage();
 
 // awesome1.printMessage(); //awesome one is not changed(prints hello!);
+
+//^ understanding prototype
+//Traditional
+// var foo = {};
+// foo.__proto__.bar = 123;
+// console.log(foo.bar);
+
+// function foo() { };
+// foo.prototype.bar = 123;
+// var bas = new foo();
+// console.log(bas.__proto__ === foo.prototype);
+// console.log(bas.bar);
+
+// function foo() { };
+// foo.prototype.bar = 123;
+// var bas = new foo();
+// var qux = new foo();
+// console.log(bas.bar);
+// console.log(qux.bar);
+// foo.prototype.bar = 456;
+// console.log(bas.bar);
+// console.log(qux.bar);

@@ -24,8 +24,8 @@ nav ul {
 }
 
 nav a {
-    text-decoration: none;
-    text-align: center; 
+   text-decoration: none;
+   text-align: center; 
    color: #fff;
    display: block;
    padding: 10px;
@@ -80,6 +80,4 @@ nav ul.social li {
     .social {
         margin: 0;
     }
-
-
 }

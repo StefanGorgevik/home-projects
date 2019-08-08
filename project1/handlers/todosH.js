@@ -4,7 +4,7 @@ var path = "./jsons/todos.json";
 var GetTodos = (req, res) => {
     model.GetAllTodos()
     .then(data => {
-        return res.send(data);
+        return res.render("todos", {students: data});
     })
     .catch(err => {
         return res.send('Error!');

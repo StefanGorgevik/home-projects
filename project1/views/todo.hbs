@@ -30,6 +30,9 @@
 		<tr>
 			<th>To - Do</th>
 		</tr>
+        {{#each students}}
+        <tr><td>{{id}}</td></tr>
+        {{/each}}
     </table> 
 
     <script>
@@ -40,24 +43,24 @@
         var subBtn = document.querySelector("#subBtn");
         var getBtn = document.querySelector("#getBtn");
 
-     var getTodos = () =>{
-            fetch("http://127.0.0.1:8080/todo")
-                .then(res => res.json()) 
-                .then(data=>{
-                        for(var i = 0; i < data.length; i++) {
-                        //    var tr = document.createElement("tr");
-                        //    var td = document.createElement('td');
-                         console.log(data[i]);
-                        //    td.innerText = data[i].id;
-                        //    tr.append(td);
-                        //    table.append(tr);
-                        }
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-           }
-           getBtn.addEventListener('click', getTodos);
+     //var getTodos = () =>{
+     //       fetch("http://127.0.0.1:8080/todo")
+     //           .then(res => res.json()) 
+     //           .then(data=>{
+     //                   for(var i = 0; i < data.length; i++) {
+    //                    //    var tr = document.createElement("tr");
+     //                   //    var td = document.createElement('td');
+     //                    console.log(data[i]);
+     //                   //    td.innerText = data[i].id;
+     //                   //    tr.append(td);
+     //                   //    table.append(tr);
+     //                   }
+     //           })
+     //           .catch((err) => {
+     //               console.log(err);
+     //           });
+     //      }
+     //      getBtn.addEventListener('click', getTodos);
 
         // subBtn.addEventListener("click", function() {
         //     var check = todoInput.value !== "" && todoInput.value !== undefined;

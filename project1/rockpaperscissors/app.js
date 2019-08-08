@@ -8,6 +8,7 @@ var resultP = document.querySelector(".result p");
 var rockDiv = document.querySelector("#r");
 var paperDiv = document.querySelector("#p");
 var scissorsDiv = document.querySelector("#s");
+var restartButton = document.querySelector("#restartButton")
 //adding events and functions
 function getComputerChoice() {
     var choices = ["r", "p", "s"];
@@ -83,5 +84,11 @@ var main = () => {
         game("s");
     });
 }
+restartButton.addEventListener("click", function() {
+    userScore = 0;
+    computerScore = 0;
+    userScoreSpan.innerHTML = userScore;
+    compScoreSpan.innerHTML = computerScore;
+});
 
 main();

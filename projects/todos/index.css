@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url(images/main-back.jpg) no-repeat center;
+}
+
+header {
+    display: flex;
+    color: #e1e6e3;
+    margin: 5px auto;
+    justify-content: center;
+}
+header h1{
+    font-size: 35px;
+    border-bottom: 2px solid #e1e6e3;
+}
+.container {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+.form1 h2 {
+    color: #e1e6e3;
+}
+/* .container input {
+    
+} */
+#submitButton {
+    padding: 6px;
+    border: 2px solid #2e302f;
+    color: #2e302f;
+    background-color: #e1e6e3;
+    
+}
+#submitButton:hover {
+    font-weight: bold;
+}
+.feedbackP {
+    display: none;
+}
+.showFeedbackP {
+    display: block;
+    color: #e1e6e3;
+    margin: 5px 5px 5px 10px;
+}
+.todoBase {
+    color: #e1e6e3;
+    border: 2px solid #e1e6e3;
+    font-size: 28px;
+    padding: 6px;
+    max-width: 300px;
+    text-align: center;
+}
+.itemDiv {
+    display: flex;
+    color: #e1e6e3;
+    border: 2px solid #e1e6e3;
+    font-size: 24px;
+    padding: 5px;
+    text-align: start;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+.items {
+    display:none;
+}
+.showItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.itemDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+.editImg,
+.deleteImg {
+    max-width: 50px;
+    max-height: 30px;
+}
+.tools {
+    border-left: 5px solid #e1e6e3;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+

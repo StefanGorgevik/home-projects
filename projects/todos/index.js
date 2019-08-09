@@ -9,8 +9,9 @@ class UI {
         this.dltButton = document.querySelector(".dltButton");
         this.emptyDiv = document.querySelector(".emptyDiv");
         this.itemsDiv = document.querySelector(".items");
+        this.todoList = document.querySelector(".todoList");
         this.todoList = [];
-        this.todoId = 0;
+        this.todoId = 1;
     }
     submitTodo() {
         var inputValue = this.inputTodo.value;
@@ -21,7 +22,6 @@ class UI {
                 self.feedbackP.classList.remove("showFeedbackP");
             },3500)
         }else {
-            console.log(inputValue);
             this.inputTodo.value = ""; 
             let todo = {
                 id: this.todoId,
@@ -29,16 +29,24 @@ class UI {
             };
             this.todoList.push(todo);
             this.todoId++;
-            console.log(this.todoId);
-            console.log(this.todoList);
-            this.itemsDiv.classList.add('showItems');
-            var p = document.createElement("p");
-            p.textContent = todo.title;
-            this.emptyDiv.append(p);
+            this.addTodo(todo); 
         }
     }
-    removeTodo() {
-     this.itemsDiv.classList.remove("showItems");
+    addTodo(todo) {
+        const div = document.createElement("div");
+        div.innerHTML = `<div class="itemDiv">
+        <div class="emptyDiv">
+            <p>${todo.id}.</p>
+            <p>${todo.title}</p>
+        </div>
+            <div class="tools"><button data-id = "${todo.id}" id="editButton"><img class="editImg" src="images/edit.png" alt="Edit Button"></button>
+                 <button data-id = "${todo.id}" id="dltButton"><img class="deleteImg" src="images/delete.png" alt=""></button></div>
+        </div>`;
+        this.itemsDiv.append(div);
+    }
+    removeTodo(element) {
+        var id = parseInt(element.dataset.id);
+        console.log(id);
 
     }
 
@@ -56,7 +64,7 @@ function eventListeners() {
     })
     dltButton.addEventListener("click", function() {
         event.preventDefault();
-        ui.removeTodo();
+        ui.removeTodo(event.target.parentElement);
     });
     
 }

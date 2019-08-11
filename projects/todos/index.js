@@ -4,12 +4,10 @@ class UI {
         this.submitButton = document.querySelector("#submitButton");
         this.showTodoDiv = document.querySelector(".showTodo");
         this.feedbackP = document.querySelector(".feedbackP");
-        this.itemDiv = document.querySelector(".itemDiv");
-        this.editButton = document.querySelector("#editButton");
-        this.dltButton = document.querySelector("#dltButton");
-        this.emptyDiv = document.querySelector(".emptyDiv");
-        this.itemsDiv = document.querySelector(".items");
+        this.dltFeedbackP = document.querySelector(".dltFeedbackP");
         this.todoList = document.querySelector(".todoList");
+        this.table = document.querySelector(".table");
+        this.emptyDiv = document.querySelector(".emptyDiv");
         this.todoList = [];
         this.todoId = 1;
     }
@@ -23,68 +21,71 @@ class UI {
             },3500)
         }else {
             this.inputTodo.value = ""; 
-            let todo = {
+            var todo = {
                 id: this.todoId,
-                title: inputValue
+                title: inputValue// check: `<input type="checkbox"/>`
             };
             this.todoList.push(todo);
             this.todoId++;
-            this.addTodo(todo); 
+            this.addTodo(todo);
         }
     }
     addTodo(todo) {
-        const div = document.createElement("div");
-        div.innerHTML = `<div class="itemDiv">
-        <div class="emptyDiv">
-            <p>${todo.id}.</p>
-            <p>${todo.title}</p>
-        </div>
-            <div class="tools"><button data-id = "${todo.id}" id="editButton"><img class="editImg" src="images/edit.png" alt="Edit Button"></button>
-                 <button data-id = "${todo.id}" id="dltButton"><img class="deleteImg" src="images/delete.png" alt=""></button></div>
-        </div>`;
-        this.itemsDiv.append(div);
+        var table = document.createElement("table");
+        table.classList.add("tableClass");
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+        var td2 = document.createElement("td");
+        var input = document.createElement("input");
+        input.setAttribute("type", "text");
+        var check = document.createElement("input");
+        check.setAttribute("type", "checkbox");
+        check.classList.add("class1");
+        input.classList.add("class3");
+        input.value = todo.title;
+        td2.appendChild(check);
+        td.appendChild(input);
+        tr.appendChild(td);
+        tr.appendChild(td2);
+        table.classList.remove("table");
+        table.appendChild(tr);
+        this.emptyDiv.appendChild(table);
     }
-    removeTodo(element) {
-        var id = parseInt(element.dataset.id);
-        console.log(id);
-        let parent = element.parentElement.parentElement;
-        console.log(parent);
-        this.itemsDiv.remove(parent);
-        let tempList = this.todoList.filter(function(item) {
-            return item.id !== id;
-          });
-        this.todoList = tempList;
-        console.log(this.todoList);
+    
+    removeTodo(todo){
+        var chk = document.getElementsByClassName("class1"); 
+            for(let j = 0; j < chk.length; j++) {
+        if(chk[j].checked) {
+            delete chk[j].parentNode.parentNode.parentNode;
+            chk[j].parentNode.parentNode.parentNode.classList.add("class2");
+            chk[j].parentNode.parentNode.parentNode.classList.remove("tableClass");       
+        } else if(!chk[j].checked){
+            this.dltFeedbackP.classList.add("showDltFeedbackP");
+            const self = this;
+            setTimeout(function() {
+                self.dltFeedbackP.classList.remove("showDltFeedbackP");
+            },3500)
+        }
     }
-
+}
 }
 
 function eventListeners() {
     var inputTodo = document.querySelector(".inputTodo");
     var submitButton = document.querySelector("#submitButton");
-    var itemsDiv = document.querySelector(".items");
+    var dltButton = document.querySelector("#dltButton");
    
     var ui = new UI();
     submitButton.addEventListener("click", function(event) {
         event.preventDefault();
         ui.submitTodo();
     });
-    itemsDiv.addEventListener("click", function(event){
-        console.log(event.target.parentElement)
-        ui.removeTodo(event.target.parentElement);
-    })
-
-    
-    // var dltButton = document.querySelector("#dltButton");
-    // dltButton.addEventListener("click", function() {
-    //     event.preventDefault();
-    //     ui.removeTodo(event.target.parentElement);
-    // });
-
-    
-    
+     dltButton.addEventListener("click", function() {
+        event.preventDefault();
+        ui.removeTodo();
+     })
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     eventListeners();
-  })
+  });

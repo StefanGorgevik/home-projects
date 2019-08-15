@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url(images/main-back.jpg) no-repeat center;
+}
+
+header {
+    display: flex;
+    color: #e1e6e3;
+    margin: 55px auto;
+    justify-content: center;
+}
+header h1{
+    font-size: 35px;
+    border-bottom: 2px solid #e1e6e3;
+}
+.container {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+.form1 h2 {
+    color: #e1e6e3;
+}
+#submitButton {
+    padding: 6px;
+    border: 2px solid #2e302f;
+    color: #2e302f;
+    background-color: #e1e6e3;
+}
+#submitButton:hover {
+    font-weight: bold;
+}
+.feedbackP {
+    display: none;
+}
+.dltFeedbackP {
+    display: none;
+    color: #e1e6e3;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.showFeedbackP {
+    display: block;
+    color: #e1e6e3;
+    margin: 5px 5px 5px 10px;
+}
+.feedbackMain {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #e1e6e3;
+    max-width: 450px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.showDltFeedbackP {
+    display: block;
+    color: #e1e6e3;
+    margin: 5px 5px 5px 10px;
+}
+.todoBase {
+    color: #e1e6e3;
+    border: 2px solid #e1e6e3;
+    font-size: 28px;
+    padding: 6px;
+    max-width: 300px;
+    text-align: center;
+}
+.deleteImg {
+    max-width: 40px;
+    max-height: 20px;
+}
+.todoList {
+    display:flex;
+    justify-content: center;
+    color: #e1e6e3;
+    border: 2px solid #e1e6e3;
+    max-width: 450px;
+    font-size: 25px;
+    border-radius: 5px;
+}
+#dltButton{
+    margin: 0 10px;
+}   
+.deleteDiv{
+    border: 2px solid #e1e6e3;
+    display: flex;
+    justify-content: center;
+    color: #e1e6e3;
+    padding: 5px;
+    border-radius: 5px;
+    align-items: center;
+}
+#dltButton:hover{
+    width: 30px;
+    height: 30px;
+}
+#table {
+    display: none;
+}
+.tableClass {
+    display: block;
+    color: #e1e6e3;
+    border: 2px solid #e1e6e3;
+    border-radius: 8px;
+}
+.tableClass td {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #e1e6e3;
+    border-radius: 4px;
+    height: 30px;
+}
+.tableClass td:hover {
+    font-weight: bold;
+}
+input[type='checkbox'] { 
+    border:2px dotted #00f;
+    background:#ff0000;
+ }
+.class1 {
+    text-align: center;
+}
+@media screen and (min-width: 500px) {
+    .todoList {
+        margin: 0 auto;;
+        width: 500px;
+    }
+}
+.class2 {
+    display:none;
+}
+.class3 {
+    background-color: #232323;
+    border: 1px solid black;
+    color: #e1e6e3;
+    text-align: center;
+    width: 500px;
+}
+#idInput {
+    width: 15px;
+    text-align: center;
+}

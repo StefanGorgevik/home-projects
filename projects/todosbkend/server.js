@@ -11,17 +11,19 @@ app.use(express.static(__dirname + '/public'));
 
 app.engine("hbs", hbs.express4());
 app.set("view engine", "hbs");
-app.set("views", __dirname + "/views");
+app.set(" views", __dirname + "/views");
 
 app.get("/todos", todos.getTodos);
 
 app.post("/todos", todos.createNewTodo);
 
-app.patch("/todos/:id", todos.PartialUpdateTodo);
+app.patch("/todos", todos.PartialUpdateTodo);
+
+app.delete("/todos/:id", todos.DeleteTodo)
 
 app.listen(8080, (err) => {
     if(err) {
         return console.log(err);
     }
     return console.log("Server has started successfully!");
-})
+});

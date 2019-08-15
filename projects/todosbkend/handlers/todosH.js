@@ -1,6 +1,5 @@
 var fs = require('fs');
 const path = "./todos.json";
-var glavni = require("../index.js")
 
 var getTodos = (req,res) => {
     fs.readFile(path, "utf8", (err, data) => {
@@ -22,9 +21,10 @@ var createNewTodo = (req, res) => {
             return res.send("Could not read file!");
         }
         jData = JSON.parse(data);
-        var newTodo = {todo: req.body.todo, id: req.params.id};
-        //console.log(newTodo);
+        var newTodo = {todo: req.body.todo, id: req.body.id};
+        
         jData.push(newTodo);
+        jData.sort((a, b) => (a.id > b.id) ? 1 : -1)
         fs.writeFile(path, JSON.stringify(jData), (err) => {
             if(err) {
                 return res.send(500).send("Could not save file!");
@@ -35,7 +35,10 @@ var createNewTodo = (req, res) => {
 };
 
 var PartialUpdateTodo = (req, res) => {
-    var check = req.body.todo != undefined && req.body.todo != "" && req.body.todo.length > 0;
+    var check = req.body.todoBot != undefined && req.body.todoBot != "" && req.body.todoBot.length > 0 && req.body.idBot > 0 && req.body.idBot !== undefined && req.body.idBot !== "";
+    console.log(req.body.todoBot)
+    console.log(req.body.idBot)
+    console.log(check);
     if(!check){
         return res.status(400).send('Bad request');
     }
@@ -46,7 +49,7 @@ var PartialUpdateTodo = (req, res) => {
         var jData = JSON.parse(data);
         var index = null;
         for(let i = 0; i < jData.length; i++) {
-            if(jData[i].id == req.body.id) {
+            if(jData[i].id == req.body.idBot) {
                 index = i;
                 break;
             }
@@ -65,8 +68,15 @@ var PartialUpdateTodo = (req, res) => {
     })
 };
 
+
+
+var DeleteTodo = () => {
+
+}
+
 module.exports = {
     createNewTodo,
     getTodos,
-    PartialUpdateTodo
+    PartialUpdateTodo,
+    DeleteTodo
 }

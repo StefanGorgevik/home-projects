@@ -20,6 +20,7 @@
         <div class="form1">
             <h2>Enter a to-do!</h2>
             <p class="feedbackP"><i class="fas fa-exclamation"></i>   You need to enter a to-do!</p>
+            <input class="inputId" type="number" name="id" placeholder="ID">
             <input class="inputTodo" type="text" name="todo" placeholder="Enter a todo!">
             <a href="#"><button id="submitButton">Submit!</button></a>
         </div>
@@ -34,11 +35,19 @@
                 <table class="tableClass">
                    {{#each data}}
                     <tr>
-                        <form action="/todos" method="PUT">
-                            <td><input id="idInput" type="text" name="id" value="{{id}}"></td>
-                            <td><input type="text" name="todo" value="{{todo}}"></td>
-                            <td><input type="checkbox"></td>
-                            <td><button>Submit</button></td>
+                        <form action="/todos">
+                            <td>
+                                <input id="idInput" type="text" name="idBot" value="{{id}}">
+                            </td>
+                            <td>
+                                <input type="text" name="todoBot" value="{{todo}}">
+                            </td>
+                            <td>
+                                <button id="dltButton"><i class="far fa-trash-alt"></i></button>
+                            </td>
+                            <td>
+                                <a href="#"><button>Submit</button></a>
+                            </td>
                         </form>   
                     </tr>
                     {{/each}}
@@ -46,13 +55,44 @@
             </div>
         </div>
 
-    <div class="container feedbackMain">
-        <div><p class="dltFeedbackP"><i class="fas fa-exclamation"></i> You need to check a to-do!</p></div>
-        <div class="deleteDiv">
-                <h4>Check the items you want to delete!</h4>
-                <a href=""></a><button id="dltButton">D</button>
-        </div>
+        
     </div>
+    <script>
+       
+/* var checkBox = () => {
+        var checkboxes = document.querySelectorAll(".checkboxes");
+        var checked = [];
+        for(var i = 0; i < checkboxes.length; i++) {
+            if(checkboxes[i].checked) {
+            checked.push(checkboxes[i]);
+            }
+        }
+        return checked;           
+    }
+  
 
+    var dltButton = document.querySelector("#dltButton");
+    dltButton.addEventListener("click", function() {
+        let checked = checkBox();
+        console.log(checked);
+        for(let i = 0; i < checked.length; i++) {
+            console.log(checked[i].parentElement.parentElement.firstChild);
+            checked[i].parentElement.parentElement.remove();
+        }   
+    }); */
+    
+    var dltButton = document.querySelectorAll("#dltButton");
+    console.log(dltButton)
+    for(let i = 0; i < dltButton.length; i++) {
+        dltButton[i].addEventListener("click", function() {
+           this.parentNode.parentNode.remove();
+           console.log(this.parentNode.parentNode.childNodes[2].textContent)
+    });
+ 
+    }
+    
+
+
+    </script>
 </body>
 </html>

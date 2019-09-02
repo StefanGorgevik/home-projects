@@ -72,7 +72,6 @@ class UI {
 }
 }
 
-
 function eventListeners() {
     var inputTodo = document.querySelector(".inputTodo");
     var submitButton = document.querySelector("#submitButton");
@@ -98,6 +97,5 @@ var startEventListeners = () => {
 module.exports = {
     UI,
     eventListeners,
-    startEventListeners,
-    checkBox
+    startEventListeners
 }

@@ -1,3 +1,5 @@
+
+
 // 1.Napisete program koj sto ima dve variabli (promenlivi) i ni vrakja koj broj e pogolem od niv. 
 //Vo konzolata treba da pisuva Primer: -> Brojot 5 e pogolem od brojot 3;
 // var num1 = 5; 

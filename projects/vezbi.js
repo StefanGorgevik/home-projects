@@ -2,8 +2,9 @@
 //Vo konzolata treba da pisuva Primer: -> Brojot 5 e pogolem od brojot 3;
 
 
-
-// 2.Napisete program koj sto vrakja text (vo konzolata) koj sto vika: Hello World vo cetiri jazici. Angliski, Francuski, Spanski, Germanski,vo zavisnost od izbraniot jazik vo variablata. Primer -> var lang = "spain" --> Rezultatot treba da bide na spanski.
+// 2.Napisete program koj sto vrakja text (vo konzolata) koj sto vika: Hello World vo cetiri jazici. 
+//Angliski, Francuski, Spanski, Germanski,vo zavisnost od izbraniot jazik vo variablata. 
+//Primer -> var lang = "spain" --> Rezultatot treba da bide na spanski.
 
 
 // 3.Napisete program koj sto vi vrakja rezultat dali moze da si kupite nov laptop.
@@ -12,7 +13,6 @@
 
 
 // 4.Напишете циклус за пресметување на сите парни броеви во еден опсег кој што ќе го внесете од prompt.
-
 
 // 5.Напишете ги сите карти од еден шпил (1-срце, 1-детелина,1-баклава, 1-лист).
 
@@ -30,9 +30,8 @@
 
 // var names = ["Filip", "Stefan", "Elena", "Stojan", "Aleksandra", "Milos", "Dimitar", "Ljube","Darko", "Petar", "Slavica", "Mile", "Sanja"];
 
-
-
-// 8.Направете низа чија големина ќе ја внесете преку prompt. Сите елементи од таа низа внесете ги преку prompt и прикажете ја подредена.
+// 8.Направете низа чија големина ќе ја внесете преку prompt. Сите елементи од таа низа внесете ги преку 
+//prompt и прикажете ја подредена.
 
 
 
@@ -79,11 +78,15 @@
 // //With forEach loop
 
 
-//10. Write a JavaScript conditional statement to sort three numbers. Display an alert box to show the result. Sample numbers: 0, -1, 4
+//10. Write a JavaScript conditional statement to sort three numbers.
+// Display an alert box to show the result. Sample numbers: 0, -1, 4
 
-//11. Write a JavaScript conditional statement to find the largest of five numbers. Display an alert box to show the result. Sample numbers : -5, -2, -6, 0, -1 */
 
-//12. Write a for loop that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd, and report that to the screen (e.g. "2 is even").
+//11. Write a JavaScript conditional statement to find the largest of five numbers. 
+//Display an alert box to show the result. Sample numbers : -5, -2, -6, 0, -1 */
+
+//12. Write a for loop that will iterate from 0 to 20. For each iteration, it will check if the current number 
+//is even or odd, and report that to the screen (e.g. "2 is even").
 
 //13. Write a for loop that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18"). Bonus: Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total).
 

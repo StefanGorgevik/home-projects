@@ -182,7 +182,7 @@ const getFiveLetterNames = (names) => {
 //16. Make this pattern: 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
 
 // var i = 0;
-// var repeat = 1;
+// var repeat = 0;
 // while(i < 5) {
 //     console.log(i);
 //     i++;
@@ -190,24 +190,20 @@ const getFiveLetterNames = (names) => {
 //         repeat++; 
 //         i = 0;
 //     } 
-//     if(repeat > 3) {
+//     if(repeat > 2) {
 //         break;
 //     }
-    
 // }
 
 //17. Make this pattern: 1 1 1 2 2 2 3 3 3 4 4 4
 
-
-// for(let i = 1; i < 5; i++) {
-//     var repeat=0;
+// for(var i = 1; i < 5; i++) {
+//     var repeat = 0;
 //     while(repeat < 3) {
-//         console.log(i)
-//         console.log(" ")
+//         console.log(i + " ");
 //         repeat++;
 //     }
 // }
-
 
 //18. Make this pattern: 3 6 9 12 15
 
@@ -230,7 +226,7 @@ const getFiveLetterNames = (names) => {
 //21. Check the length of a name, and tell if the length is even or odd!
 function checkNameLength() {
     var name = prompt("Enter your name to check the length");
-    if(name.length % 2 === 0) {
+    if (name.length % 2 === 0) {
         return console.log("Your name's length is even!");
     } else {
         return console.log("Your name's length is odd!")
@@ -246,8 +242,8 @@ var checkOddOrEven = () => {
     var end = prompt("Enter your ending number");
     var odds = [];
     var evens = [];
-    for(var i = start; i <= end; i++){
-        if(i % 2 === 0) {
+    for (var i = start; i <= end; i++) {
+        if (i % 2 === 0) {
             evens.push(i);
         } else {
             odds.push(i);
@@ -364,3 +360,120 @@ Range	  Grade
 // * * * * * */
 
 //42.How can you count the number of occurrences of elements in an array?
+
+
+//43. Given two phrases, check which words are missing.
+
+var s = "I am using hackerrank to improve performance";
+var t = "am hackerrank improve";
+
+const findWords = (s, t) => {
+    var first = s.split(" ");
+    var second = t.split(" ");
+    var words = [];
+    for (var i = 0, j = 0; i <= first.length; i++) {
+        if (first[i] !== second[j]) {
+            words.push(first[i]);
+        } else {
+            j++;
+        }
+    }
+    return words;
+}
+
+// console.log(findWords(s,t));
+
+//44. Compare triplets, two arrays, and check which index integer is bigger. For example, if a[0] is > than b[0]
+// first should be 1; Return an array that tells which array has bigger numbers. Exmp: [2,1] 
+var a = [5, 1, 6, 8];
+var b = [3, 2, 4, 8];
+function compareTriplets(a, b) {
+    var first = 0;
+    var second = 0;
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] > b[i]) {
+            first++;
+        } else if (b[i] > a[i]) {
+            second++;
+        }
+    }
+    return [first, second];
+}
+
+// console.log(compareTriplets(a,b))
+
+//45. Given an array, (a), and a number (d), rotate the elements of the array (d) times to the left.
+//example: 1 ,2, 3, 4, 5 (d = 2) => 2, 3, 4, 05, 1 => 3, 4, 5, 1, 2
+var a = [1, 2, 3, 4, 5];
+var d = 2;
+
+function rotLeft(a, d) {
+    for (var i = 1; i <= d; i++) {
+        a.push(a.shift());
+    }
+    return a;
+}
+
+// console.log(rotLeft(a, d));
+
+//46. Given an array and a number, search for the number within the array, if you find it return "YES", else return "NO";
+
+var numArray = [3, 5, 11, -2, 2];
+var numToFind = -2;
+
+function findTheNumber(arr, num) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === num) {
+            return "YES";
+        }
+    }
+    return "NO";
+}
+
+// console.log(findTheNumber(numArray, numToFind));
+
+//47.Given two numbers, loop through the range of these numbers and find the odd numbers.
+
+function searchOdd(k, j) {
+    var oddNums = [];
+    for (var i = k; i <= j; i++) {
+        if (i % 2 === 1) {
+            oddNums.push(i);
+        }
+    }
+    return oddNums;
+}
+
+// console.log(searchOdd(1, 22));
+
+//48.Given a number, add a dash after every even number;
+
+var numToDash = 236457916;
+
+function addDash(num) {
+    var str = num.toString();
+    const result = [];
+    for(var i = 0; i < str.length; i++) {
+        if(str[i] % 2 === 0) {
+                result.push(str[i], '-');
+        } else {
+            result.push(str[i]);
+        }
+    }
+    return result.join('');
+}
+
+// console.log(addDash(numToDash));
+
+//49. Given two arrays, one sorted(array1) and one distinct(array2), find the common elements.
+
+var array1 = [1, 5, 15, 20, 32, 37];
+var array2 = [2, 5, 13, 30, 32, 35 ];
+var sortedArr = [];
+for(var i = 0; i < array1.length; i++) {
+    if(array1[i] === array2[i]) {
+        console.log(array1[i], array2[i])
+        sortedArr.push(array1[i]);
+    }
+}
+console.log(sortedArr);

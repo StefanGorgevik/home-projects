@@ -524,36 +524,167 @@ Range	  Grade
 // }
 
 
+//42.Given an array(arr), numbers n1, n2, find how many times n1 and n2 occur in the array
 
-//42.How can you count the number of occurrences of elements in an array?
+var arr = [1, 5, 1, 1, 5, 2, 4, 5, 2, 3, 2, 4, 2, 4, 2, 3, 2, 3, 2, 4, 2, 3, 2, 4, 2, 5, 1, 4, 2, 4, 2, 3, 2, 4, 1];
 
-// var arr= [1,5,1,1,5,2,4,5,2,3,2,4,2,4,2,3,2,3,2,4,2,3,2,4,2,5,1,4,2,4,2,3,2,4,1];
-// var ones = 0;
-// var twos = 0;
-// for(var i = 0; i < arr.length; i++){
-//    if(arr[i] === 1){
-//        ones++;
-//    }else if(arr[i] ===2){
-//        twos++;
-//    }
-//    }
-// console.log(" There are " + ones + " digits 1 in this array");
-// console.log(" There are " + twos + " digits 2 in this array");
+function findOccurences(arr, n1, n2) {
+    var firstOcc = 0;
+    var secondOcc = 0;
+    for(var i = 0; i < arr.length; i++) {
+        if(arr[i] === n1) {
+            firstOcc++;
+        }
+        if(arr[i] === n2) {
+            secondOcc++;
+        }
+    }
+    return [firstOcc, secondOcc];
+}
 
-//43. Have the function FirstReverse(str) take the str parameter being passed and return the string in 
+// console.log(findOccurences(arr, 1, 3));
+
+//43. Given two phrases, check which words are missing.
+
+var s = "I am using hackerrank to improve performance";
+var t = "am hackerrank improve";
+
+const findWords = (s, t) => {
+    var first = s.split(" ");
+    var second = t.split(" ");
+    var words = [];
+    for (var i = 0, j = 0; i <= first.length; i++) {
+        if (first[i] !== second[j]) {
+            words.push(first[i]);
+        } else {
+            j++;
+        }
+    }
+    return words;
+}
+
+// console.log(findWords(s,t));
+
+//44. Compare triplets, two arrays, and check which index integer is bigger. For example, if a[0] is > than b[0]
+// first should be 1; Return an array that tells which array has bigger numbers. Exmp: [2,1] 
+var a = [5, 1, 6, 8];
+var b = [3, 2, 4, 8];
+function compareTriplets(a, b) {
+    var first = 0;
+    var second = 0;
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] > b[i]) {
+            first++;
+        } else if (b[i] > a[i]) {
+            second++;
+        }
+    }
+    return [first, second];
+}
+
+// console.log(compareTriplets(a,b))
+
+//45. Given an array, (a), and a number (d), rotate the elements of the array (d) times to the left.
+//example: 1 ,2, 3, 4, 5 (d = 2) => 2, 3, 4, 05, 1 => 3, 4, 5, 1, 2
+var a = [1, 2, 3, 4, 5];
+var d = 2;
+
+function rotLeft(a, d) {
+    for (var i = 1; i <= d; i++) {
+        a.push(a.shift());
+    }
+    return a;
+}
+
+// console.log(rotLeft(a, d));
+
+//46. Given an array and a number, search for the number within the array, if you find it return "YES", else return "NO";
+
+var numArray = [3, 5, 11, -2, 2];
+var numToFind = -2;
+
+function findTheNumber(arr, num) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === num) {
+            return "YES";
+        }
+    }
+    return "NO";
+}
+
+// console.log(findTheNumber(numArray, numToFind));
+
+//47.Given two numbers, loop through the range of these numbers and find the odd numbers.
+
+function searchOdd(k, j) {
+    var oddNums = [];
+    for (var i = k; i <= j; i++) {
+        if (i % 2 === 1) {
+            oddNums.push(i);
+        }
+    }
+    return oddNums;
+}
+
+// console.log(searchOdd(1, 22));
+
+//48.Given a number, add a dash after every even number;
+
+var numToDash = 236457916;
+
+function addDash(num) {
+    var str = num.toString();
+    const result = [];
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] % 2 === 0) {
+            result.push(str[i], '-');
+        } else {
+            result.push(str[i]);
+        }
+    }
+    return result.join('');
+}
+
+// console.log(addDash(numToDash));
+
+//49. Given two arrays, one sorted(array1) and one distinct(array2), find the common elements.
+
+var array1 = [1, 5, 15, 20, 32, 37];
+var array2 = [2, 5, 13, 30, 32, 35];
+function findCommonElements(array1, array2) {
+    var sortedArr = [];
+    for (var i = 0; i < array1.length; i++) {
+        if (array1[i] === array2[i]) {
+            console.log(array1[i], array2[i])
+            sortedArr.push(array1[i]);
+        }
+    }
+    return sortedArr;
+}
+// console.log(findCommonElements(array1, array2));
+
+//50. Given five positive integers, find the minimum and maximum values by summing exactly four of the five integers.
+//return [max, min].For example, arr is [1 3 5 7 9] minimum sum is 16 and  maximum sum is 24. We would print 16 24
+
+var arrayMinMax = [1, 9, 3, 5, 7];
+
+function minMax(arr) {
+    arr = arr.sort();
+    var max = 0;
+    var min = 0;
+    for(var i = 0; i < arr.length; i++) {
+        if(i !== arr.length - 1) {
+            min += arr[i];
+        } 
+        if(i !== 0) {
+            max += arr[i];
+        }
+    }
+   return [min, max]
+}
+// console.log(minMax(arrayMinMax));
+
+//51. Have the function FirstReverse(str) take the str parameter being passed and return the string in 
 //reversed order. For example: if the input string is "Hello World and Coders" then your program should 
 //return the string sredoC dna dlroW olleH. 
-
-
-// function FirstReverse(str) { 
-// 	var splitString = str.split("").reverse().join(""); 
-//     return splitString;
-// }
-
-// console.log(FirstReverse("Hello World and Coders"));
-
-//44. Have the function LetterChanges(str) take the str parameter being passed and modify it using the 
-//following algorithm. Replace every letter in the string with the letter following it in the alphabet
-// (ie. c becomes d, z becomes a). 
-//Then capitalize every vowel in this new string (a, e, i, o, u) and finally return this modified string. 
 

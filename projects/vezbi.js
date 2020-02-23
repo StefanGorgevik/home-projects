@@ -205,3 +205,52 @@ Range	  Grade
 // * * * * * */
 
 //42.How can you count the number of occurrences of elements in an array?
+
+
+//43. Given two phrases, check which words are missing.
+
+var s = "I am using hackerrank to improve performance";
+var t = "am hackerrank improve";
+
+
+//44. Compare triplets, two arrays, and check which index integer is bigger. For example, if a[0] is > than b[0]
+// first should be 1; Return an array that tells which array has bigger numbers. Exmp: [2,1] 
+var a = [5, 1, 6, 8];
+var b = [3, 2, 4, 8];
+
+
+//45. Given an array, (a), and a number (d), rotate the elements of the array (d) times to the left.
+//example: 1 ,2, 3, 4, 5 (d = 2) => 2, 3, 4, 05, 1 => 3, 4, 5, 1, 2
+var a = [1, 2, 3, 4, 5];
+var d = 2;
+
+
+//46. Given an array and a number, search for the number within the array, if you find it return "YES", else return "NO";
+
+var numArray = [3, 5, 11, -2, 2];
+var numToFind = -2;
+
+
+//47.Given two numbers, loop through the range of these numbers and find the odd numbers.
+
+
+
+//48.Given a number, add a dash after every even number;
+
+var numToDash = 236457916;
+
+
+//49. Given two arrays, one sorted(array1) and one distinct(array2), find the common elements.
+
+var array1 = [1, 5, 15, 20, 32, 37];
+var array2 = [2, 5, 13, 30, 32, 35];
+
+
+//50. Given five positive integers, find the minimum and maximum values by summing exactly four of the five integers.
+//return [max, min].For example, arr is [1 3 5 7 9] minimum sum is 16 and  maximum sum is 24. We would print 16 24
+
+var arrayMinMax = [1, 9, 3, 5, 7];
+
+//51. Have the function FirstReverse(str) take the str parameter being passed and return the string in 
+//reversed order. For example: if the input string is "Hello World and Coders" then your program should 
+//return the string sredoC dna dlroW olleH. 

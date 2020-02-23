@@ -359,8 +359,25 @@ Range	  Grade
 // * * * *  
 // * * * * * */
 
-//42.How can you count the number of occurrences of elements in an array?
+//42.Given an array(arr), numbers n1, n2, find how many times n1 and n2 occur in the array
 
+var arr = [1, 5, 1, 1, 5, 2, 4, 5, 2, 3, 2, 4, 2, 4, 2, 3, 2, 3, 2, 4, 2, 3, 2, 4, 2, 5, 1, 4, 2, 4, 2, 3, 2, 4, 1];
+
+function findOccurences(arr, n1, n2) {
+    var firstOcc = 0;
+    var secondOcc = 0;
+    for(var i = 0; i < arr.length; i++) {
+        if(arr[i] === n1) {
+            firstOcc++;
+        }
+        if(arr[i] === n2) {
+            secondOcc++;
+        }
+    }
+    return [firstOcc, secondOcc];
+}
+
+// console.log(findOccurences(arr, 1, 3));
 
 //43. Given two phrases, check which words are missing.
 
@@ -453,9 +470,9 @@ var numToDash = 236457916;
 function addDash(num) {
     var str = num.toString();
     const result = [];
-    for(var i = 0; i < str.length; i++) {
-        if(str[i] % 2 === 0) {
-                result.push(str[i], '-');
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] % 2 === 0) {
+            result.push(str[i], '-');
         } else {
             result.push(str[i]);
         }
@@ -468,12 +485,47 @@ function addDash(num) {
 //49. Given two arrays, one sorted(array1) and one distinct(array2), find the common elements.
 
 var array1 = [1, 5, 15, 20, 32, 37];
-var array2 = [2, 5, 13, 30, 32, 35 ];
-var sortedArr = [];
-for(var i = 0; i < array1.length; i++) {
-    if(array1[i] === array2[i]) {
-        console.log(array1[i], array2[i])
-        sortedArr.push(array1[i]);
+var array2 = [2, 5, 13, 30, 32, 35];
+function findCommonElements(array1, array2) {
+    var sortedArr = [];
+    for (var i = 0; i < array1.length; i++) {
+        if (array1[i] === array2[i]) {
+            console.log(array1[i], array2[i])
+            sortedArr.push(array1[i]);
+        }
     }
+    return sortedArr;
 }
-console.log(sortedArr);
+// console.log(findCommonElements(array1, array2));
+
+//50. Given five positive integers, find the minimum and maximum values by summing exactly four of the five integers.
+//return [max, min].For example, arr is [1 3 5 7 9] minimum sum is 16 and  maximum sum is 24. We would print 16 24
+
+var arrayMinMax = [1, 9, 3, 5, 7];
+
+function minMax(arr) {
+    arr = arr.sort();
+    var max = 0;
+    var min = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (i !== arr.length - 1) {
+            min += arr[i];
+        }
+        if (i !== 0) {
+            max += arr[i];
+        }
+    }
+    return [min, max]
+}
+// console.log(minMax(arrayMinMax));
+
+//51. Have the function FirstReverse(str) take the str parameter being passed and return the string in 
+//reversed order. For example: if the input string is "Hello World and Coders" then your program should 
+//return the string sredoC dna dlroW olleH. 
+var stringToReverse = "Hello World and Coders";
+function reverseString(string) {
+	string = string.split("").reverse().join("");
+	return string;
+}
+
+// console.log(reverseString(stringToReverse));

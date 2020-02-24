@@ -529,3 +529,35 @@ function reverseString(string) {
 }
 
 // console.log(reverseString(stringToReverse));
+
+//52.Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. 
+//Print the decimal value of each fraction on a new line. The test cases are scaled to six decimal places.
+
+var intArr = [-4, 3, -9, 0, 4, 1, ];
+
+function checkIntegers(arr) {
+    var pos = 0;
+    var neg = 0;
+    var zeros = 0;
+    for(var i = 0; i < arr.length; i++) {
+        if(arr[i] > 0) {
+            pos++;
+        } else if(arr[i] < 0) {
+            neg++;
+        } else {
+            zeros++;
+        }
+    }
+    pos = pos / arr.length
+    pos = pos.toFixed(6);
+
+    neg = neg / arr.length
+    neg = neg.toFixed(6);
+
+    zeros = zeros / arr.length;
+    zeros = zeros.toFixed(6);
+
+    return [pos, neg, zeros];
+}
+// console.log(checkIntegers(intArr));
+

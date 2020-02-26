@@ -63,16 +63,16 @@ const askSecNum = () => {
 const evenNumbers = () => {
     var first = askFirstNum();
     var second = askSecNum();
-    var evenArr = [];
-    for (var i = first; i <= second; i++) {
+    var evenNums = [];
+    for (var i = first; i < second; i++) {
         if (i % 2 === 0) {
-            evenArr.push(i);
+            evenNums.push(i);
         }
     }
-    return console.log(evenArr);
+    return evenNums;
 }
 
-//evenNumbers();
+// console.log(evenNumbers());
 
 // 5.Напишете ги сите карти од еден шпил (1-срце, 1-детелина,1-баклава, 1-лист).
 
@@ -80,16 +80,14 @@ var num = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 var type = ["Srce", "Detelina", "Baklava", "List"];
 
 const shuffleCards = (num, type) => {
-    let shuffled = [];
-    for (let broj in num) {
-        for (let tip in type) {
-            shuffled.push(num[broj] + "-" + type[tip]);
+    for (var i = 0; i < num.length; i++) {
+        for (var j = 0; j < type.length; j++) {
+            console.log(num[i] + type[j])
         }
     }
-    return console.log(shuffled);
 }
 
-//shuffleCards(num,type);
+// shuffleCards(num,type);
 
 
 // 6.Креирајте објект кој во себе ќе има 7 својства со барем 2 низи
@@ -103,15 +101,15 @@ const shuffleCards = (num, type) => {
 var names = ["Filip", "Stefan", "Elena", "Stojan", "Aleksandra", "Milos", "Dimitar", "Ljube", "Darko", "Petar", "Slavica", "Mile", "Sanja"];
 
 const getFiveLetterNames = (names) => {
-    var fiveLetterNames = [];
-    for (let i = 0; i < names.length; i++) {
+    var oddNames = [];
+    for (var i = 0; i < names.length; i++) {
         if (names[i].length === 5) {
-            fiveLetterNames.push(names[i])
+            oddNames.push(names[i]);
         }
     }
-    return console.log(fiveLetterNames);
+    return oddNames;
 }
-// getFiveLetterNames(names);
+// console.log(getFiveLetterNames(names));
 
 // 8.Направете низа чија големина ќе ја внесете преку prompt. Сите елементи од таа низа внесете ги преку 
 //prompt и прикажете ја подредена.
@@ -164,14 +162,30 @@ const getFiveLetterNames = (names) => {
 //10. Write a JavaScript conditional statement to sort three numbers.
 // Display an alert box to show the result. Sample numbers: 0, -1, 4
 
+var array = [0, -1, 4];
+array = array.sort();
+// console.log(array)
 
 //11. Write a JavaScript conditional statement to find the largest of five numbers. 
 //Display an alert box to show the result. Sample numbers : -5, -2, -6, 0, -1 */
+// var array = [-5,-2,-6, -1, 8];
+// var array = [5, 2, 6, 1, 8];
+// var max;
+// for(let i = 0; i < array.length; i++) {
+//     console.log(i)
+//     if(array[i] > array[i + 1]) {
+//         max = array[i]
+//         console.log(max)
+//     }
+// }
+// console.log(max);
 
 //12. Write a for loop that will iterate from 0 to 20. For each iteration, it will check if the current number 
 //is even or odd, and report that to the screen (e.g. "2 is even").
 
-//13. Write a for loop that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18"). Bonus: Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total).
+//13. Write a for loop that will iterate from 0 to 10. For each iteration of the for loop, 
+//it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18"). 
+//Bonus: Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total).
 
 //14. The Grade Assigner
 
@@ -181,42 +195,40 @@ const getFiveLetterNames = (names) => {
 
 //16. Make this pattern: 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
 
-// var i = 0;
 // var repeat = 0;
+// var i = 0;
 // while(i < 5) {
 //     console.log(i);
 //     i++;
 //     if(i > 4) {
-//         repeat++; 
-//         i = 0;
-//     } 
+//         repeat++;
+//         i=0;
+//     }
 //     if(repeat > 2) {
 //         break;
 //     }
+
 // }
+
 
 //17. Make this pattern: 1 1 1 2 2 2 3 3 3 4 4 4
 
 // for(var i = 1; i < 5; i++) {
 //     var repeat = 0;
 //     while(repeat < 3) {
-//         console.log(i + " ");
+//         console.log(i);
+//         console.log("");
 //         repeat++;
 //     }
 // }
 
+
 //18. Make this pattern: 3 6 9 12 15
 
-// var i = 3;
-// while(i < 16) {
-//     console.log(i);
-//     i+=3;
-// }
+
 
 //19. Make this pattern: 9 8 7 6 5 4 3 2 1 0
-// for(var i = 9; i >= 0; i--) {
-//     console.log( i)
-// }
+
 
 
 //20. Create a program where the last 3 digits of a number are added together		
@@ -225,12 +237,7 @@ const getFiveLetterNames = (names) => {
 
 //21. Check the length of a name, and tell if the length is even or odd!
 function checkNameLength() {
-    var name = prompt("Enter your name to check the length");
-    if (name.length % 2 === 0) {
-        return console.log("Your name's length is even!");
-    } else {
-        return console.log("Your name's length is odd!")
-    }
+
 }
 
 // checkNameLength()
@@ -238,56 +245,24 @@ function checkNameLength() {
 
 //22. Print odd and even numbers with prompt and save them in a separate array.
 var checkOddOrEven = () => {
-    var start = prompt("Enter your starting number");
-    var end = prompt("Enter your ending number");
-    var odds = [];
-    var evens = [];
-    for (var i = start; i <= end; i++) {
-        if (i % 2 === 0) {
-            evens.push(i);
-        } else {
-            odds.push(i);
-        }
-    }
-    return console.log(`Odd numbers are ${odds}, and even numbers are ${evens}`)
+
 }
 // checkOddOrEven()
 
 //23. Print all numbers between -10 and 19;
 
-// for(var i = -10; i <= 19; i++) {
-//     console.log(i);
-// }
 
 //24. Print all even numbers between 10 and 40
-// for(var i = 10; i <= 40; i++) {
-//     if(i % 2 === 0) {
-//         console.log(i)
-//     }
-// }
+
 
 //25. Print all odd numbers between 300 and 333 
-// var num = 300;
-// while(num <= 333) {
-//     if(num % 2 !== 0) {
-//         console.log(num)
-//     }
-//     num++;
-// }
+
 
 //26. Print all numbers dividible by 3 and 5 between 10 and 50.
 
-// for(var i = 10; i < 51; i++){
-//     if(i % 3 === 0 & i % 5 === 0) {
-//         console.log(i);
-//     }
-// }
 
 //27. Make a function factorial, 3 ways!
-// var result = 1;
-// for(var i = 2; i <= 8; i++){
-//     result *= i;
-// }
+
 // console.log(result)
 
 //Function factorial
@@ -364,17 +339,17 @@ Range	  Grade
 var arr = [1, 5, 1, 1, 5, 2, 4, 5, 2, 3, 2, 4, 2, 4, 2, 3, 2, 3, 2, 4, 2, 3, 2, 4, 2, 5, 1, 4, 2, 4, 2, 3, 2, 4, 1];
 
 function findOccurences(arr, n1, n2) {
-    var firstOcc = 0;
-    var secondOcc = 0;
-    for(var i = 0; i < arr.length; i++) {
-        if(arr[i] === n1) {
-            firstOcc++;
+    var first = 0;
+    var second = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === n1) {
+            first++;
         }
-        if(arr[i] === n2) {
-            secondOcc++;
+        if (arr[i] === n2) {
+            second++;
         }
     }
-    return [firstOcc, secondOcc];
+    return [first, second];
 }
 
 // console.log(findOccurences(arr, 1, 3));
@@ -388,7 +363,7 @@ const findWords = (s, t) => {
     var first = s.split(" ");
     var second = t.split(" ");
     var words = [];
-    for (var i = 0, j = 0; i <= first.length; i++) {
+    for (var i = 0, j = 0; i < first.length; i++) {
         if (first[i] !== second[j]) {
             words.push(first[i]);
         } else {
@@ -425,7 +400,7 @@ var a = [1, 2, 3, 4, 5];
 var d = 2;
 
 function rotLeft(a, d) {
-    for (var i = 1; i <= d; i++) {
+    for (var i = 0; i <= d; i++) {
         a.push(a.shift());
     }
     return a;
@@ -452,13 +427,13 @@ function findTheNumber(arr, num) {
 //47.Given two numbers, loop through the range of these numbers and find the odd numbers.
 
 function searchOdd(k, j) {
-    var oddNums = [];
-    for (var i = k; i <= j; i++) {
-        if (i % 2 === 1) {
-            oddNums.push(i);
+    var odd = [];
+    for (var i = k; i < j; i++) {
+        if (i % 2 === 0) {
+            odd.push(i);
         }
     }
-    return oddNums;
+    return odd;
 }
 
 // console.log(searchOdd(1, 22));
@@ -468,16 +443,17 @@ function searchOdd(k, j) {
 var numToDash = 236457916;
 
 function addDash(num) {
-    var str = num.toString();
-    const result = [];
+    var str = num.toString().split("");
+    var newArr = [];
     for (var i = 0; i < str.length; i++) {
         if (str[i] % 2 === 0) {
-            result.push(str[i], '-');
+            newArr.push(str[i], '-')
         } else {
-            result.push(str[i]);
+            newArr.push(str[i]);
         }
     }
-    return result.join('');
+    newArr = newArr.join('');
+    return newArr;
 }
 
 // console.log(addDash(numToDash));
@@ -487,15 +463,15 @@ function addDash(num) {
 var array1 = [1, 5, 15, 20, 32, 37];
 var array2 = [2, 5, 13, 30, 32, 35];
 function findCommonElements(array1, array2) {
-    var sortedArr = [];
+    var common = [];
     for (var i = 0; i < array1.length; i++) {
-        if (array1[i] === array2[i]) {
-            console.log(array1[i], array2[i])
-            sortedArr.push(array1[i]);
+        if(array1[i] === array2[i]) {
+            common.push(array1[i]);
         }
     }
-    return sortedArr;
+    return common;
 }
+
 // console.log(findCommonElements(array1, array2));
 
 //50. Given five positive integers, find the minimum and maximum values by summing exactly four of the five integers.
@@ -505,18 +481,19 @@ var arrayMinMax = [1, 9, 3, 5, 7];
 
 function minMax(arr) {
     arr = arr.sort();
-    var max = 0;
+    var max = 0; 
     var min = 0;
-    for (var i = 0; i < arr.length; i++) {
-        if (i !== arr.length - 1) {
+    for(var i = 0; i < arr.length;i++) {
+        if(i !== arr.length-1) {
             min += arr[i];
         }
-        if (i !== 0) {
+        if(i !== 0) {
             max += arr[i];
         }
     }
-    return [min, max]
+    return [min, max];
 }
+
 // console.log(minMax(arrayMinMax));
 
 //51. Have the function FirstReverse(str) take the str parameter being passed and return the string in 
@@ -524,8 +501,8 @@ function minMax(arr) {
 //return the string sredoC dna dlroW olleH. 
 var stringToReverse = "Hello World and Coders";
 function reverseString(string) {
-	string = string.split("").reverse().join("");
-	return string;
+    string = string.split('').reverse().join('')
+    return string;
 }
 
 // console.log(reverseString(stringToReverse));
@@ -533,26 +510,25 @@ function reverseString(string) {
 //52.Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. 
 //Print the decimal value of each fraction on a new line. The test cases are scaled to six decimal places.
 
-var intArr = [-4, 3, -9, 0, 4, 1, ];
+var intArr = [-4, 3, -9, 0, 4, 1,];
 
 function checkIntegers(arr) {
-    var pos = 0;
-    var neg = 0;
-    var zeros = 0;
-    for(var i = 0; i < arr.length; i++) {
-        if(arr[i] > 0) {
-            pos++;
-        } else if(arr[i] < 0) {
-            neg++;
-        } else {
+    var neg = 0; var pos = 0; var zeros = 0;
+    arr.forEach((el) => {
+        if(el === 0) {
             zeros++;
+        } else if(el > 0) {
+            pos++;
+        } else {
+            neg++;
         }
-    }
-    pos = pos / arr.length
-    pos = pos.toFixed(6);
+    })
 
-    neg = neg / arr.length
+    neg = neg / arr.length;
     neg = neg.toFixed(6);
+
+    pos = pos / arr.length;
+    pos = pos.toFixed(6);
 
     zeros = zeros / arr.length;
     zeros = zeros.toFixed(6);
@@ -561,3 +537,33 @@ function checkIntegers(arr) {
 }
 // console.log(checkIntegers(intArr));
 
+//53. Given a string, reverse each word in the sentence
+
+
+// console.log(str)
+
+//54. Given an array of integers, find the fractions of the largest number.
+
+var ar = [4, 4, 1, 3, 4, 8, 8, 9, 4, 8, 8];
+
+// function findMax(ar) {
+//     var max;
+//     for(var i = 0; i < ar.length; i++) {
+//         if(ar[i] > ar[i + 1]) {
+//             max = ar[i];
+//         }
+//     }
+//     return max;
+// }
+function findMaxFractions(ar) {
+    var max = Math.max(...ar);
+    var count = 0;
+    for(var i = 0; i < ar.length;i++) {
+        if(ar[i] === max) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(findMaxFractions(ar));

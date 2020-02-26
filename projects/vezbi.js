@@ -254,3 +254,15 @@ var arrayMinMax = [1, 9, 3, 5, 7];
 //51. Have the function FirstReverse(str) take the str parameter being passed and return the string in 
 //reversed order. For example: if the input string is "Hello World and Coders" then your program should 
 //return the string sredoC dna dlroW olleH. 
+
+//52.Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. 
+//Print the decimal value of each fraction on a new line. The test cases are scaled to six decimal places.
+var intArr = [-4, 3, -9, 0, 4, 1, ];
+
+//53. Given a string, reverse each word in the sentence
+
+var string = "Welcome to this Javascript Guide!"
+
+//54. Given an array of integers, find the fractions of the largest number.
+
+var ar= [4, 4, 1, 3, 4];
